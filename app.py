@@ -23,10 +23,17 @@ st.set_page_config(page_title="MathMind - Asistente UMG", page_icon="📐", layo
 if "tema" not in st.session_state:
     st.session_state.tema = "dark"
 
-with st.sidebar:
-    st.markdown("### Apariencia")
-    tema_elegido = st.toggle("🌙 Modo Oscuro", value=(st.session_state.tema == "dark"))
-    st.session_state.tema = "dark" if tema_elegido else "light"
+# Botón de cambio de tema (arriba a la derecha del contenido)
+col_tema, _ = st.columns([1, 5])
+with col_tema:
+    if st.session_state.tema == "dark":
+        if st.button("☀️ Modo Claro", use_container_width=True):
+            st.session_state.tema = "light"
+            st.rerun()
+    else:
+        if st.button("🌙 Modo Oscuro", use_container_width=True):
+            st.session_state.tema = "dark"
+            st.rerun()
 
 # Cargar CSS base
 with open("styles.css") as f:

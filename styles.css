@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Fondo General Tecnológico Oscuro UMG */
+.stApp {
+    background: linear-gradient(135deg, #050b14 0%, #0a111e 50%, #0d1726 100%);
+    font-family: 'Inter', sans-serif;
+    color: #f3f4f6;
+}
+
+/* Ajuste de margen superior para que no tape el banner */
+.block-container {
+    padding-top: 1rem !important;
+}
+
+/* Banner Superior Institucional Visible */
+.header-bar-full {
+    width: 100%;
+    background: linear-gradient(90deg, #001e36 0%, #002B49 50%, #001e36 100%);
+    color: white;
+    padding: 16px 25px;
+    border-radius: 14px;
+    border-bottom: 3px solid #00d2ff;
+    border-top: 1px solid rgba(0, 210, 255, 0.3);
+    box-shadow: 0 6px 25px rgba(0, 210, 255, 0.25);
+    margin-bottom: 25px;
+}
+
+/* Tarjetas y Paneles con Efecto Translúcido y Borde Brillante (Glow) */
+div.stMarkdown, .glass-card {
+    background: rgba(13, 22, 36, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(0, 210, 255, 0.05);
+}
+
+/* Cajas de Pasos Paso a Paso */
+.step-box {
+    background: rgba(10, 18, 30, 0.9);
+    border-left: 4px solid #00d2ff;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones con Estilo Neón / Glow */
+div.stButton > button {
+    background: linear-gradient(135deg, #002B49 0%, #0056b3 100%);
+    color: #ffffff;
+    border: 1px solid rgba(0, 210, 255, 0.5);
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    box-shadow: 0 0 15px rgba(0, 86, 179, 0.3);
+    transition: all 0.3s ease;
+}
+
+div.stButton > button:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #00d2ff 100%) !important;
+    border-color: #00d2ff !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.6);
+}
+
+/* Sidebar estricta para mantener los botones de navegación intactos */
+section[data-testid="stSidebar"] {
+    background-color: #070d17;
+    border-right: 1px solid rgba(0, 210, 255, 0.15);
+}
+
+/* Estilización moderna de Inputs y Selectboxes */
+.stTextInput input, .stSelectbox div[data-baseweb="select"], .stTextArea textarea {
+    background-color: rgba(7, 13, 23, 0.9) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(0, 210, 255, 0.3) !important;
+    border-radius: 10px !important;
+}
+
+.stTextInput input:focus, .stTextArea textarea:focus {
+    border-color: #00d2ff !important;
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.4) !important;
+}

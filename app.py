@@ -23,18 +23,6 @@ st.set_page_config(page_title="MathMind - Asistente UMG", page_icon="📐", layo
 if "tema" not in st.session_state:
     st.session_state.tema = "dark"
 
-# Botón de cambio de tema (arriba a la derecha del contenido)
-col_tema, _ = st.columns([1, 5])
-with col_tema:
-    if st.session_state.tema == "dark":
-        if st.button("☀️ Modo Claro", use_container_width=True):
-            st.session_state.tema = "light"
-            st.rerun()
-    else:
-        if st.button("🌙 Modo Oscuro", use_container_width=True):
-            st.session_state.tema = "dark"
-            st.rerun()
-
 # Cargar CSS base
 with open("styles.css") as f:
     css_base = f.read()
@@ -108,6 +96,18 @@ st.html(f"""
     </div>
 </div>
 """)
+
+# Botón de cambio de tema (visible después del encabezado)
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    if st.session_state.tema == "dark":
+        if st.button("☀️ Cambiar a Modo Claro", use_container_width=True, key="btn_tema"):
+            st.session_state.tema = "light"
+            st.rerun()
+    else:
+        if st.button("🌙 Cambiar a Modo Oscuro", use_container_width=True, key="btn_tema"):
+            st.session_state.tema = "dark"
+            st.rerun()
 
 if "modulo" not in st.session_state:
     st.session_state.modulo = "Solucionador"

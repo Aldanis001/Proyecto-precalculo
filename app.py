@@ -1,4 +1,4 @@
- =============================================================================
+# =============================================================================
 # ASISTENTE VIRTUAL DE CÁLCULO Y PRECÁLCULO
 # Universidad Mariano Gálvez de Guatemala
 # Estructura Modularizada (Frontend, Backend y Estilos UMG)

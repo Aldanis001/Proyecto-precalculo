@@ -33,7 +33,7 @@ st.html(f"""
 <div class="header-bar-full">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
         <div style="display:flex; align-items:center; gap:20px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Escudo_UMG_Guatemala.png" style="width:65px; height:65px; object-fit:contain; filter:drop-shadow(0px 0px 8px rgba(0,210,255,0.5));" />
+            <img src="https://github.com/Aaldanis/Wallpapers/blob/main/Escudo_de_la_universidad_Mariano_G%C3%A1lvez_Guatemala.svg.webp?raw=true" style="width:185px; height:185px; object-fit:contain; filter:drop-shadow(0px 0px 8px rgba(0,210,255,0.5));" />
             <div>
                 <strong style="font-size:1.35rem; letter-spacing:0.5px; color:#ffffff;">{UNIVERSIDAD}</strong><br>
                 <span style="font-size:0.9rem; color:#00d2ff; font-weight:600;">Facultad de Ingeniería · {ASIGNATURA}</span>

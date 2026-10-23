@@ -19,11 +19,66 @@ load_dotenv(dotenv_path)
 
 st.set_page_config(page_title="MathMind - Asistente UMG", page_icon="📐", layout="wide")
 
-# Cargar diseño CSS externo con estética Cyber-Math corregida
-with open("styles.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+# ========== MODO OSCURO / CLARO ==========
+if "tema" not in st.session_state:
+    st.session_state.tema = "dark"
 
-INTEGRANTES = "JACQUELINE YAJAYRA AGUILAR GARCIA"
+with st.sidebar:
+    st.markdown("### Apariencia")
+    tema_elegido = st.toggle("🌙 Modo Oscuro", value=(st.session_state.tema == "dark"))
+    st.session_state.tema = "dark" if tema_elegido else "light"
+
+# Cargar CSS base
+with open("styles.css") as f:
+    css_base = f.read()
+
+# Variables según el tema
+if st.session_state.tema == "light":
+    variables = """
+    :root {
+        --bg-gradient-start: #f0f4f8;
+        --bg-gradient-mid: #e2e8f0;
+        --bg-gradient-end: #f8fafc;
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --header-bg: linear-gradient(90deg, #002B49 0%, #0056b3 50%, #002B49 100%);
+        --header-border: #00d2ff;
+        --card-bg: rgba(255, 255, 255, 0.9);
+        --card-border: rgba(0, 86, 179, 0.25);
+        --step-bg: rgba(255, 255, 255, 0.95);
+        --button-bg: linear-gradient(135deg, #0056b3 0%, #00d2ff 100%);
+        --button-border: rgba(0, 86, 179, 0.4);
+        --sidebar-bg: #ffffff;
+        --input-bg: #ffffff;
+        --input-border: rgba(0, 86, 179, 0.35);
+        --accent: #0056b3;
+    }
+    """
+else:
+    variables = """
+    :root {
+        --bg-gradient-start: #050b14;
+        --bg-gradient-mid: #0a111e;
+        --bg-gradient-end: #0d1726;
+        --text-primary: #f3f4f6;
+        --text-secondary: #d1d5db;
+        --header-bg: linear-gradient(90deg, #001e36 0%, #002B49 50%, #001e36 100%);
+        --header-border: #00d2ff;
+        --card-bg: rgba(13, 22, 36, 0.75);
+        --card-border: rgba(0, 210, 255, 0.2);
+        --step-bg: rgba(10, 18, 30, 0.9);
+        --button-bg: linear-gradient(135deg, #002B49 0%, #0056b3 100%);
+        --button-border: rgba(0, 210, 255, 0.5);
+        --sidebar-bg: #070d17;
+        --input-bg: rgba(7, 13, 23, 0.9);
+        --input-border: rgba(0, 210, 255, 0.3);
+        --accent: #00d2ff;
+    }
+    """
+
+st.markdown(f"<style>{variables}\n{css_base}</style>", unsafe_allow_html=True)
+
+INTEGRANTES = "Edgar Aldanis Chávez Estrada"
 SECCION = "Sección A"
 ASIGNATURA = "Precálculo y Cálculo"
 UNIVERSIDAD = "Universidad Mariano Gálvez de Guatemala"
@@ -33,7 +88,7 @@ st.html(f"""
 <div class="header-bar-full">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
         <div style="display:flex; align-items:center; gap:20px;">
-            <img src="https://github.com/Aaldanis/Wallpapers/blob/main/Escudo_de_la_universidad_Mariano_G%C3%A1lvez_Guatemala.svg.webp?raw=true" style="width:185px; height:5px; object-fit:contain; filter:drop-shadow(0px 0px 8px rgba(0,210,255,0.5));" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Escudo_UMG_Guatemala.png" style="width:65px; height:65px; object-fit:contain; filter:drop-shadow(0px 0px 8px rgba(0,210,255,0.5));" />
             <div>
                 <strong style="font-size:1.35rem; letter-spacing:0.5px; color:#ffffff;">{UNIVERSIDAD}</strong><br>
                 <span style="font-size:0.9rem; color:#00d2ff; font-weight:600;">Facultad de Ingeniería · {ASIGNATURA}</span>

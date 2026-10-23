@@ -73,7 +73,7 @@ else:
 
 st.markdown(f"<style>{variables}\n{css_base}</style>", unsafe_allow_html=True)
 
-INTEGRANTES = "Edgar Aldanis Chávez Estrada"
+INTEGRANTES = "JACQUELINE YAJAYRA AGUILAR GARCIA"
 SECCION = "Sección A"
 ASIGNATURA = "Precálculo y Cálculo"
 UNIVERSIDAD = "Universidad Mariano Gálvez de Guatemala"

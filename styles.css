@@ -40,11 +40,17 @@
     --accent: #0056b3;
 }
 
-/* Fondo General */
+/* Fondo y texto principal con !important para ganar a Streamlit */
 .stApp {
-    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
-    font-family: 'Inter', sans-serif;
-    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Forzar color de texto en la mayoría de elementos */
+.stMarkdown, .stMarkdown p, .stMarkdown span, 
+label, .stText, h1, h2, h3, h4, h5, h6,
+.stCaption, .stAlert {
+    color: var(--text-primary) !important;
 }
 
 .block-container {

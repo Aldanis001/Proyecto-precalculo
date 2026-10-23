@@ -17,13 +17,13 @@ from backend import validar_y_limpiar, resolver_ia
 dotenv_path = os.path.join(os.path.dirname(__file__), ".env")
 load_dotenv(dotenv_path)
 
-st.set_page_config(page_title="MathMind - Asistente UMG", page_icon="📐", layout="wide")
+st.set_page_config(page_title="Asistente UMG", page_icon="📐", layout="wide")
 
 # Cargar diseño CSS
 with open("styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-INTEGRANTES = "Edgar Aldanis Chávez Estrada"
+INTEGRANTES = "JACQUELINE YAJAYRA AGUILAR GARCIA"
 SECCION = "Sección A"
 ASIGNATURA = "Precálculo y Cálculo"
 UNIVERSIDAD = "Universidad Mariano Gálvez de Guatemala"

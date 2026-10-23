@@ -34,20 +34,33 @@ if st.session_state.tema == "light":
         background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 50%, #f8fafc 100%) !important;
         color: #1e293b !important;
     }
-    .stMarkdown, .stMarkdown p, .stMarkdown span, label, h1, h2, h3, h4, h5, h6, .stCaption {
+    /* Textos */
+    .stMarkdown, .stMarkdown p, .stMarkdown span, .stMarkdown div,
+    label, h1, h2, h3, h4, h5, h6, .stCaption, .stText, p, span, div {
         color: #1e293b !important;
     }
-    section[data-testid="stSidebar"] {
+    /* Sidebar */
+    section[data-testid="stSidebar"], section[data-testid="stSidebar"] * {
         background-color: #ffffff !important;
+        color: #1e293b !important;
     }
-    .stTextInput input, .stTextArea textarea, .stSelectbox div[data-baseweb="select"] {
+    /* Inputs y select */
+    .stTextInput input, .stTextArea textarea, 
+    .stSelectbox div[data-baseweb="select"], 
+    .stNumberInput input {
         background-color: #ffffff !important;
         color: #1e293b !important;
         border: 1px solid #94a3b8 !important;
     }
+    /* Tarjetas y contenedores */
+    div[data-testid="stVerticalBlock"], .stMarkdown {
+        background-color: transparent !important;
+    }
+    /* Botones */
     div.stButton > button {
         background: linear-gradient(135deg, #0056b3 0%, #00d2ff 100%) !important;
         color: white !important;
+        border: 1px solid #0056b3 !important;
     }
     """
 else:
@@ -56,13 +69,17 @@ else:
         background: linear-gradient(135deg, #050b14 0%, #0a111e 50%, #0d1726 100%) !important;
         color: #f3f4f6 !important;
     }
-    .stMarkdown, .stMarkdown p, .stMarkdown span, label, h1, h2, h3, h4, h5, h6, .stCaption {
+    .stMarkdown, .stMarkdown p, .stMarkdown span, .stMarkdown div,
+    label, h1, h2, h3, h4, h5, h6, .stCaption, .stText, p, span, div {
         color: #f3f4f6 !important;
     }
-    section[data-testid="stSidebar"] {
+    section[data-testid="stSidebar"], section[data-testid="stSidebar"] * {
         background-color: #070d17 !important;
+        color: #f3f4f6 !important;
     }
-    .stTextInput input, .stTextArea textarea, .stSelectbox div[data-baseweb="select"] {
+    .stTextInput input, .stTextArea textarea, 
+    .stSelectbox div[data-baseweb="select"], 
+    .stNumberInput input {
         background-color: rgba(7, 13, 23, 0.9) !important;
         color: #f3f4f6 !important;
         border: 1px solid rgba(0, 210, 255, 0.3) !important;
@@ -70,6 +87,7 @@ else:
     div.stButton > button {
         background: linear-gradient(135deg, #002B49 0%, #0056b3 100%) !important;
         color: white !important;
+        border: 1px solid rgba(0, 210, 255, 0.5) !important;
     }
     """
 

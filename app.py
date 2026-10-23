@@ -1,4 +1,4 @@
-# =============================================================================
+ =============================================================================
 # ASISTENTE VIRTUAL DE CÁLCULO Y PRECÁLCULO
 # Universidad Mariano Gálvez de Guatemala
 # Estructura Modularizada (Frontend, Backend y Estilos UMG)
@@ -19,79 +19,9 @@ load_dotenv(dotenv_path)
 
 st.set_page_config(page_title="MathMind - Asistente UMG", page_icon="📐", layout="wide")
 
-# ========== MODO OSCURO / CLARO ==========
-if "tema" not in st.session_state:
-    st.session_state.tema = "dark"
-
-# Cargar CSS base
+# Cargar diseño CSS
 with open("styles.css") as f:
-    css_base = f.read()
-
-# Variables según el tema + CSS fuerte
-if st.session_state.tema == "light":
-    tema_css = """
-    .stApp {
-        background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 50%, #f8fafc 100%) !important;
-        color: #1e293b !important;
-    }
-    /* Textos */
-    .stMarkdown, .stMarkdown p, .stMarkdown span, .stMarkdown div,
-    label, h1, h2, h3, h4, h5, h6, .stCaption, .stText, p, span, div {
-        color: #1e293b !important;
-    }
-    /* Sidebar */
-    section[data-testid="stSidebar"], section[data-testid="stSidebar"] * {
-        background-color: #ffffff !important;
-        color: #1e293b !important;
-    }
-    /* Inputs y select */
-    .stTextInput input, .stTextArea textarea, 
-    .stSelectbox div[data-baseweb="select"], 
-    .stNumberInput input {
-        background-color: #ffffff !important;
-        color: #1e293b !important;
-        border: 1px solid #94a3b8 !important;
-    }
-    /* Tarjetas y contenedores */
-    div[data-testid="stVerticalBlock"], .stMarkdown {
-        background-color: transparent !important;
-    }
-    /* Botones */
-    div.stButton > button {
-        background: linear-gradient(135deg, #0056b3 0%, #00d2ff 100%) !important;
-        color: white !important;
-        border: 1px solid #0056b3 !important;
-    }
-    """
-else:
-    tema_css = """
-    .stApp {
-        background: linear-gradient(135deg, #050b14 0%, #0a111e 50%, #0d1726 100%) !important;
-        color: #f3f4f6 !important;
-    }
-    .stMarkdown, .stMarkdown p, .stMarkdown span, .stMarkdown div,
-    label, h1, h2, h3, h4, h5, h6, .stCaption, .stText, p, span, div {
-        color: #f3f4f6 !important;
-    }
-    section[data-testid="stSidebar"], section[data-testid="stSidebar"] * {
-        background-color: #070d17 !important;
-        color: #f3f4f6 !important;
-    }
-    .stTextInput input, .stTextArea textarea, 
-    .stSelectbox div[data-baseweb="select"], 
-    .stNumberInput input {
-        background-color: rgba(7, 13, 23, 0.9) !important;
-        color: #f3f4f6 !important;
-        border: 1px solid rgba(0, 210, 255, 0.3) !important;
-    }
-    div.stButton > button {
-        background: linear-gradient(135deg, #002B49 0%, #0056b3 100%) !important;
-        color: white !important;
-        border: 1px solid rgba(0, 210, 255, 0.5) !important;
-    }
-    """
-
-st.markdown(f"<style>{tema_css}\n{css_base}</style>", unsafe_allow_html=True)
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 INTEGRANTES = "Edgar Aldanis Chávez Estrada"
 SECCION = "Sección A"
@@ -116,18 +46,6 @@ st.html(f"""
     </div>
 </div>
 """)
-
-# Botón de cambio de tema (visible después del encabezado)
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
-    if st.session_state.tema == "dark":
-        if st.button("☀️ Cambiar a Modo Claro", use_container_width=True, key="btn_tema"):
-            st.session_state.tema = "light"
-            st.rerun()
-    else:
-        if st.button("🌙 Cambiar a Modo Oscuro", use_container_width=True, key="btn_tema"):
-            st.session_state.tema = "dark"
-            st.rerun()
 
 if "modulo" not in st.session_state:
     st.session_state.modulo = "Solucionador"
